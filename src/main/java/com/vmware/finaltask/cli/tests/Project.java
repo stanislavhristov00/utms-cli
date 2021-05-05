@@ -12,4 +12,12 @@ public class Project {
         this.description = description;
         this.suites = suites;
     }
+
+    public void print() {
+        System.out.println("PROJECT NAME: " + this.name);
+        System.out.println("PROJECT DESCRIPTION " + this.description);
+        for(TestSuite t: suites){
+            t.print();
+        }
+    }
 }

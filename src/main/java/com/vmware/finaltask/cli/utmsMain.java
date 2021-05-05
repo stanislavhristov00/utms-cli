@@ -1,6 +1,7 @@
 package com.vmware.finaltask.cli;
 
 import com.vmware.finaltask.cli.ProjectCreatorService.ProjectService;
+import com.vmware.finaltask.cli.tests.Project;
 import com.vmware.finaltask.cli.tests.TestSuite;
 
 import java.util.ArrayList;
@@ -33,9 +34,10 @@ public class utmsMain {
                 }
             }
         }*/
-        ProjectService projectService = new ProjectService();
+        /*ProjectService projectService = new ProjectService();
         YamlParser yamlParser = new YamlParser("testing.yaml");
         Map<String, Object> map = yamlParser.parse();
+        System.out.println((LinkedHashMap<String, Object>) map.get("project"));
         List<TestSuite> testSuites = new ArrayList<>();
         List<Object> suites = (List<Object>) map.get("suites");
         for(Object o : suites){
@@ -46,6 +48,10 @@ public class utmsMain {
 
         for(TestSuite t : testSuites){
             t.print();
-        }
+        }*/
+        YamlParser yamlParser = new YamlParser("testing.yaml");
+        Map<String, Object> map = yamlParser.parse();
+        Project p = ProjectService.generateProject(map);
+        p.print();
     }
 }
