@@ -1,2 +1,4 @@
-package com.vmware.finaltask.cli.commands;public class CommandRunner {
+package com.vmware.finaltask.cli.commands;
+
+public class CommandRunner {
 }
