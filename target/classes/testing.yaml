@@ -5,16 +5,16 @@ suites:
   - BackEndTests:
     - Test1:
       enabled: true
-      command: echo Test
+      command: cmd.exe /c echo Test
     - Test2:
       enabled: true
-      command: echo Test 2
+      command: cmd.exe /c echo Test 2
       description: This test does something too
   - UITests:
     - Test3:
       enabled: true
-      command: echo Test 3
+      command: cmd.exe /c echo Test 3
       description: Hello world
     - Test4:
       enabled: false
-      command: echo Test 4
+      command: cmd.exe /c echo Test 4

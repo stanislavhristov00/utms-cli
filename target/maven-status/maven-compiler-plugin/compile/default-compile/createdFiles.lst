@@ -1,2 +1,13 @@
-yamlParser.class
+com\vmware\finaltask\cli\testresults\TestResults.class
+com\vmware\finaltask\cli\interfaces\Parser.class
+com\vmware\finaltask\cli\ProjectCreatorService\ProjectService.class
+com\vmware\finaltask\cli\testresults\ExecutedCommand.class
+com\vmware\finaltask\cli\testresults\ProjectResults.class
+com\vmware\finaltask\cli\testresults\TestSuiteResults.class
+com\vmware\finaltask\cli\commands\CommandRunner.class
+com\vmware\finaltask\cli\YamlParser.class
+com\vmware\finaltask\cli\tests\TestSuite.class
+com\vmware\finaltask\cli\tests\Project.class
+com\vmware\finaltask\cli\tests\Test.class
 com\vmware\finaltask\cli\utmsMain.class
+com\vmware\finaltask\cli\validation\ParsedYamlValidation.class
