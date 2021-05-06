@@ -10,6 +10,7 @@ import java.util.List;
 import java.util.Map;
 
 public class ProjectService {
+    private ProjectService() {}
 
     public static Project generateProject(Map<String, Object> parsedYaml){
         LinkedHashMap<String, Object> project = (LinkedHashMap<String, Object>) parsedYaml.get("project");
@@ -25,7 +26,7 @@ public class ProjectService {
         return new Project(name, description, testSuites);
     }
 
-    public static TestSuite createTestSuite(LinkedHashMap<String, Object> testSuite){
+    public static TestSuite createTestSuite(Map<String, Object> testSuite){
         List<Test> tests = new ArrayList<>();
         String name = testSuite.entrySet().iterator().next().getKey();
         TestSuite result = new TestSuite(name, tests);
@@ -38,7 +39,7 @@ public class ProjectService {
         return result;
     }
 
-    public static Test createTest(LinkedHashMap<String, Object> test){
+    public static Test createTest(Map<String, Object> test){
         String name = test.entrySet().iterator().next().getKey();
         String description = (String) test.get("description");
         Boolean enabled = (Boolean) test.get("enabled");

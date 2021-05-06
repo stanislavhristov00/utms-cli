@@ -50,7 +50,11 @@ public class CommandRunner {
         readOutput.close();
         errorOutput.close();
 
-        return new ExecutedCommand(encode(output.toString()), encode(error.toString()), start.toString(), end.toString(), process.exitValue());
+        return new ExecutedCommand(encode(output.toString()),
+                encode(error.toString()),
+                start.toString(),
+                end.toString(),
+                process.exitValue());
     }
 
     private static String encode(String str) {
