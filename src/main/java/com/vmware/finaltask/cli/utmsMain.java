@@ -1,6 +1,7 @@
 package com.vmware.finaltask.cli;
 
 import com.beust.jcommander.JCommander;
+import com.beust.jcommander.ParameterException;
 import com.vmware.finaltask.cli.ProjectCreatorService.ProjectService;
 import com.vmware.finaltask.cli.args.Args;
 import com.vmware.finaltask.cli.commands.CommandRunner;
@@ -24,6 +25,7 @@ import java.util.Map;
 public class utmsMain {
 
     public static void main(String[] args) {
+        try{
         Args argf = new Args();
         JCommander flags = JCommander.newBuilder()
                 .addObject(argf)
@@ -37,8 +39,7 @@ public class utmsMain {
         if(argf.getRunId() != null){
             runid = argf.getRunId();
         }
-        try {
-            YamlParser yamlParser = new YamlParser(filePath); //TODO: need to check if config file is valid
+            YamlParser yamlParser = new YamlParser(filePath);
             Map<String, Object> map = yamlParser.parse();
             if(ParsedYamlValidation.validate(map)){
                 Project p = ProjectService.generateProject(map);
@@ -51,6 +52,8 @@ public class utmsMain {
             System.out.println("File format for windows must be file:/(DISK):/(FOLDER)/...");
         }catch (YAMLException yamlException){
             System.out.println("File doesn't exist");
+        }catch (ParameterException parameterException){
+            System.out.println("Run id should be a number my dude");
         }
     }
 }
