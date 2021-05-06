@@ -24,7 +24,7 @@
                         </goals>
                         <configuration>
                             <mainClass>
-                                com.vmware.finaltask.cli.utmsMain
+                                com.vmware.finaltask.cli.UtmsMain
                             </mainClass>
                         </configuration>
                     </execution>

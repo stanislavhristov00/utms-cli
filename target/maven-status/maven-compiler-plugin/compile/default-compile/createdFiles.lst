@@ -9,6 +9,6 @@ com\vmware\finaltask\cli\YamlParser.class
 com\vmware\finaltask\cli\tests\TestSuite.class
 com\vmware\finaltask\cli\tests\Project.class
 com\vmware\finaltask\cli\tests\Test.class
-com\vmware\finaltask\cli\utmsMain.class
+com\vmware\finaltask\cli\UtmsMain.class
 com\vmware\finaltask\cli\args\Args.class
 com\vmware\finaltask\cli\validation\ParsedYamlValidation.class

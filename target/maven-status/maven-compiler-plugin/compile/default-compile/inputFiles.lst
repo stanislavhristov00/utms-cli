@@ -5,7 +5,7 @@ D:\utms-cli\src\main\java\com\vmware\finaltask\cli\validation\ParsedYamlValidati
 D:\utms-cli\src\main\java\com\vmware\finaltask\cli\ProjectCreatorService\ProjectService.java
 D:\utms-cli\src\main\java\com\vmware\finaltask\cli\testresults\TestResults.java
 D:\utms-cli\src\main\java\com\vmware\finaltask\cli\YamlParser.java
-D:\utms-cli\src\main\java\com\vmware\finaltask\cli\utmsMain.java
+D:\utms-cli\src\main\java\com\vmware\finaltask\cli\UtmsMain.java
 D:\utms-cli\src\main\java\com\vmware\finaltask\cli\args\Args.java
 D:\utms-cli\src\main\java\com\vmware\finaltask\cli\tests\TestSuite.java
 D:\utms-cli\src\main\java\com\vmware\finaltask\cli\testresults\TestSuiteResults.java

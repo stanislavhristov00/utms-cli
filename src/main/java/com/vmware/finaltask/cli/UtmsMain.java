@@ -6,23 +6,12 @@ import com.vmware.finaltask.cli.ProjectCreatorService.ProjectService;
 import com.vmware.finaltask.cli.args.Args;
 import com.vmware.finaltask.cli.commands.CommandRunner;
 import com.vmware.finaltask.cli.testresults.ProjectResults;
-import com.vmware.finaltask.cli.testresults.TestResults;
 import com.vmware.finaltask.cli.tests.Project;
-import com.vmware.finaltask.cli.tests.Test;
-import com.vmware.finaltask.cli.tests.TestSuite;
 import com.vmware.finaltask.cli.validation.ParsedYamlValidation;
 import org.yaml.snakeyaml.error.YAMLException;
-
-import java.io.File;
-import java.io.IOException;
-import java.nio.file.InvalidPathException;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Map;
 
-public class utmsMain {
+public class UtmsMain {
 
     public static void main(String[] args) {
         try{
