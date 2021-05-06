@@ -13,6 +13,18 @@ public class Project {
         this.suites = suites;
     }
 
+    public String getName(){
+        return this.name;
+    }
+
+    public String getDescription(){
+        return this.description;
+    }
+
+    public List<TestSuite> getSuites(){
+        return this.suites;
+    }
+
     public void print() {
         System.out.println("PROJECT NAME: " + this.name);
         System.out.println("PROJECT DESCRIPTION " + this.description);

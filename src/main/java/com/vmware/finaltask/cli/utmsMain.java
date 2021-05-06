@@ -11,14 +11,14 @@ import java.util.Map;
 
 public class utmsMain {
     public static void main(String[] args) {
-        YamlParser yamlParser = new YamlParser("testing.yaml");
+        /*YamlParser yamlParser = new YamlParser("testing.yaml");
         Map<String, Object> map = yamlParser.parse();
-        /*Project p = ProjectService.generateProject(map);
-        p.print();*/
+        Project p = ProjectService.generateProject(map);
+        p.print();
         System.out.println(ParsedYamlValidation.validate(map));
-
-        /*Test test = new Test("Test 1", true, "cmd.exe /c echo Test", null);
+*/
+        Test test = new Test("Test 1", true, "cmd.exe /c echo Test", null);
         TestResults testResults = CommandRunner.executeTest(test);
-        testResults.print();*/
+        testResults.print();
     }
 }

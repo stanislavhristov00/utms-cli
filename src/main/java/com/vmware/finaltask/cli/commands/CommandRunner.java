@@ -49,12 +49,17 @@ public class CommandRunner {
         }
         readOutput.close();
         errorOutput.close();
-
+        int exitCode; // still wondering if exitValue() or waitFor()
+        try{
+            exitCode = process.waitFor();
+        }catch (InterruptedException e){
+            exitCode = 1;
+        }
         return new ExecutedCommand(encode(output.toString()),
                 encode(error.toString()),
                 start.toString(),
                 end.toString(),
-                process.exitValue());
+                exitCode);
     }
 
     private static String encode(String str) {

@@ -15,6 +15,14 @@ public class TestSuite {
         this.tests.add(test);
     }
 
+    public String getName(){
+        return this.name;
+    }
+
+    public List<Test> getTests(){
+        return this.tests;
+    }
+
     public void print(){
         System.out.println("SUITE NAME: " + this.name);
         for(Test t : this.tests){
