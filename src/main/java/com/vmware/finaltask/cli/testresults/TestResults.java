@@ -17,4 +17,10 @@ public class TestResults {
         this.command = command;
     }
 
+    public void print(){
+        System.out.println("DESCRIPTION: " + this.description);
+        System.out.println("STATUS: " + this.status);
+        this.command.print();
+    }
+
 }
