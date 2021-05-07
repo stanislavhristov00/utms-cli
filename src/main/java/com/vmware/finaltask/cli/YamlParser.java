@@ -21,7 +21,7 @@ public class YamlParser implements Parser {
                 .getResourceAsStream(this.filePath);*/
         InputStream inputStream = null;
         try {
-            inputStream = new FileInputStream("/res/example.xls");
+            inputStream = new FileInputStream(this.filePath);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
