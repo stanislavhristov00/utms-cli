@@ -12,9 +12,4 @@ pipeline {
             }
         }
     }
-    post {
-        always {
-            archiveArtifacts artifacts: 'target/utms-cli.jar', onlyIfSuccessful: true
-        }
-    }
 }
