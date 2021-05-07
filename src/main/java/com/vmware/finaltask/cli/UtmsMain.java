@@ -39,12 +39,12 @@ public class UtmsMain {
         if(argf.getRunId() != null){
             runid = argf.getRunId();
         }
+            System.out.println(filePath);
             Parser yamlParser = new YamlParser(filePath);
             Map<String, Object> map = yamlParser.parse();
             if(ParsedYamlValidation.validate(map)){
                 Project p = ProjectService.generateProject(map);
                 ProjectResults pr = CommandRunner.executeProject(p, runid);
-                System.out.println(filePath);
                 System.out.println(JsonParser.parseProject(pr));
             }else{
                 System.out.println(JsonError.configFileNotValid());
