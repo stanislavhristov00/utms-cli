@@ -17,6 +17,26 @@ public class ProjectResults {
         this.suites = suites;
     }
 
+    public int getRunId() {
+        return runId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public List<TestSuiteResults> getSuites() {
+        return suites;
+    }
+
     public void print(){
         System.out.println("RUN ID: " + this.runId);
         System.out.println("PROJECT NAME: " + this.name);

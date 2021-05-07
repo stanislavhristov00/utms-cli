@@ -13,6 +13,14 @@ public class TestSuiteResults {
         this.tests = tests;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public List<TestResults> getTests() {
+        return tests;
+    }
+
     public String getStatus(){
         return this.status;
     }

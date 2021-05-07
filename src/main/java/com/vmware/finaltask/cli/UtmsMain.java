@@ -5,10 +5,21 @@ import com.beust.jcommander.ParameterException;
 import com.vmware.finaltask.cli.ProjectCreatorService.ProjectService;
 import com.vmware.finaltask.cli.args.Args;
 import com.vmware.finaltask.cli.commands.CommandRunner;
+import com.vmware.finaltask.cli.interfaces.Parser;
+import com.vmware.finaltask.cli.json.JsonError;
+import com.vmware.finaltask.cli.json.JsonParser;
 import com.vmware.finaltask.cli.testresults.ProjectResults;
+import com.vmware.finaltask.cli.testresults.TestResults;
+import com.vmware.finaltask.cli.testresults.TestSuiteResults;
 import com.vmware.finaltask.cli.tests.Project;
+import com.vmware.finaltask.cli.tests.Test;
+import com.vmware.finaltask.cli.tests.TestSuite;
 import com.vmware.finaltask.cli.validation.ParsedYamlValidation;
+import org.json.simple.JSONObject;
 import org.yaml.snakeyaml.error.YAMLException;
+
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 public class UtmsMain {
@@ -28,21 +39,22 @@ public class UtmsMain {
         if(argf.getRunId() != null){
             runid = argf.getRunId();
         }
-            YamlParser yamlParser = new YamlParser(filePath);
+            Parser yamlParser = new YamlParser(filePath);
             Map<String, Object> map = yamlParser.parse();
             if(ParsedYamlValidation.validate(map)){
                 Project p = ProjectService.generateProject(map);
                 ProjectResults pr = CommandRunner.executeProject(p, runid);
-                pr.print();
+                System.out.println(JsonParser.parseProject(pr));
             }else{
-                System.out.println("Config file is not valid");
+                System.out.println(JsonError.configFileNotValid());
             }
         }catch (IllegalArgumentException e){
             System.out.println("File format for windows must be file:/(DISK):/(FOLDER)/...");
         }catch (YAMLException yamlException){
-            System.out.println("File doesn't exist");
+            System.out.println(JsonError.configFileNotFound());
         }catch (ParameterException parameterException){
-            System.out.println("Run id should be a number my dude");
+            System.out.println(JsonError.runidIsNotValid());
         }
     }
-}
+} // TODO: maybe setup a default testing.yaml for config in Args
+

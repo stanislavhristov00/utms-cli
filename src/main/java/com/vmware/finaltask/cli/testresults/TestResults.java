@@ -24,6 +24,18 @@ public class TestResults {
         return this.status;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public ExecutedCommand getCommand() {
+        return command;
+    }
+
     public void print(){
         System.out.println("NAME: " + this.name);
         System.out.println("DESCRIPTION: " + this.description);

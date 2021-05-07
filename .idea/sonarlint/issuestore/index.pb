@@ -27,3 +27,11 @@ x
 Hsrc/main/java/com/vmware/finaltask/cli/testresults/TestSuiteResults.java,0\7\07d71f0718ac6404cf9470ed9cd5a102a1c9fe34
 v
 Fsrc/main/java/com/vmware/finaltask/cli/testresults/ProjectResults.java,c\5\c55ded1e8670b441bcd8012853345362acc94e83
+e
+5src/main/java/com/vmware/finaltask/cli/args/Args.java,a\9\a93a95f232ed659a7d5cc064c574a039091258f4
+d
+4src/main/java/com/vmware/finaltask/cli/UtmsMain.java,a\7\a7d2e249f8e4b2b8f2f13a54af07863c380b12fa
+k
+;src/main/java/com/vmware/finaltask/cli/json/JsonParser.java,4\7\47826c381764cb3a83a38476fdd899e996782764
+j
+:src/main/java/com/vmware/finaltask/cli/json/JsonError.java,f\c\fc961f8d8d150877d0f8d3155371c745a08d948a
