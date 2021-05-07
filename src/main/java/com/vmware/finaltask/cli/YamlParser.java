@@ -7,6 +7,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 public class YamlParser implements Parser {
@@ -18,7 +19,7 @@ public class YamlParser implements Parser {
         this.filePath = filePath;
     }
     @Override
-    public Map<String, Object> parse(){
+    public LinkedHashMap<String, Object> parse(){
        /* InputStream inputStream = this.getClass()
                 .getClassLoader()
                 .getResourceAsStream(this.filePath);*/
@@ -34,6 +35,6 @@ public class YamlParser implements Parser {
         System.out.println(inputStream.toString() + "hui");
         Object x = this.yaml.load(inputStream);
         System.out.println(x.toString() + "hui3");
-        return (Map<String, Object>) x;
+        return (LinkedHashMap<String, Object>) x;
     }
 }
