@@ -13,6 +13,9 @@ public class ParsedYamlValidation {
     private ParsedYamlValidation() {}
 
     public static boolean validate(Map<String, Object> map){
+        if(map == null){
+            return false;
+        }
         if(map.get("project") == null || map.get("suites") == null){
             return false;
         }

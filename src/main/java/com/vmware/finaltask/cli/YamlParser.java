@@ -23,7 +23,7 @@ public class YamlParser implements Parser {
         try {
             inputStream = new FileInputStream(this.filePath);
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
+            System.out.println(e.getMessage());
         }
         return this.yaml.load(inputStream);
     }
