@@ -25,12 +25,13 @@ public class YamlParser implements Parser {
         FileInputStream inputStream = null;
         try {
             inputStream = new FileInputStream(this.filePath);
-            System.getProperties().load(inputStream);
+           // System.getProperties().load(inputStream);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
+        System.out.println(inputStream.toString() + "hui");
         return this.yaml.load(inputStream);
     }
 }

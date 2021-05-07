@@ -24,7 +24,7 @@ public class UtmsMain {
                 .addObject(argf)
                 .build();
         flags.parse(args);
-        String filePath = "testing.yaml";
+        String filePath = "D:\\Games\\testing2.yaml";
         int runid = 1;
         if(argf.getConfig() != null){
             filePath = argf.getConfig();
