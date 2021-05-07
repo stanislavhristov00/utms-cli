@@ -45,6 +45,7 @@ public class UtmsMain {
         }catch (IllegalArgumentException e){
             System.out.println("File format for windows must be file:/(DISK):/(FOLDER)/...");
         }catch (YAMLException yamlException){
+            yamlException.printStackTrace();
             System.out.println(yamlException.getMessage());
             //System.out.println(JsonError.configFileNotFound());
         }catch (ParameterException parameterException){
