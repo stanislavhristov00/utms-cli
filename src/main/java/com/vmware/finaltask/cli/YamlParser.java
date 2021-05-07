@@ -32,6 +32,8 @@ public class YamlParser implements Parser {
             e.printStackTrace();
         }
         System.out.println(inputStream.toString() + "hui");
-        return this.yaml.load(inputStream);
+        Object x = this.yaml.load(inputStream);
+        System.out.println(x.toString() + "hui3");
+        return (Map<String, Object>) x;
     }
 }
