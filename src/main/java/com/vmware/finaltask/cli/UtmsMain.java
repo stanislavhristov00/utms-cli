@@ -9,17 +9,10 @@ import com.vmware.finaltask.cli.interfaces.Parser;
 import com.vmware.finaltask.cli.json.JsonError;
 import com.vmware.finaltask.cli.json.JsonParser;
 import com.vmware.finaltask.cli.testresults.ProjectResults;
-import com.vmware.finaltask.cli.testresults.TestResults;
-import com.vmware.finaltask.cli.testresults.TestSuiteResults;
 import com.vmware.finaltask.cli.tests.Project;
-import com.vmware.finaltask.cli.tests.Test;
-import com.vmware.finaltask.cli.tests.TestSuite;
 import com.vmware.finaltask.cli.validation.ParsedYamlValidation;
-import org.json.simple.JSONObject;
 import org.yaml.snakeyaml.error.YAMLException;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Map;
 
 public class UtmsMain {

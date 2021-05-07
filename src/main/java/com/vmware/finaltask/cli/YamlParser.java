@@ -3,7 +3,7 @@ package com.vmware.finaltask.cli;
 import com.vmware.finaltask.cli.interfaces.Parser;
 import org.yaml.snakeyaml.Yaml;
 
-import java.io.InputStream;
+import java.io.*;
 import java.util.Map;
 
 public class YamlParser implements Parser {
@@ -16,9 +16,15 @@ public class YamlParser implements Parser {
     }
     @Override
     public Map<String, Object> parse(){
-        InputStream inputStream = this.getClass()
+        /*InputStream inputStream = this.getClass()
                 .getClassLoader()
-                .getResourceAsStream(this.filePath);
+                .getResourceAsStream(this.filePath);*/
+        InputStream inputStream = null;
+        try {
+            inputStream = new DataInputStream(new FileInputStream(new File(this.filePath)));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
         return this.yaml.load(inputStream);
     }
 }
