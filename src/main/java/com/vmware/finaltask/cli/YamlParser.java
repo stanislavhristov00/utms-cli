@@ -21,7 +21,7 @@ public class YamlParser implements Parser {
        /* InputStream inputStream = this.getClass()
                 .getClassLoader()
                 .getResourceAsStream(this.filePath);*/
-        InputStream inputStream = null;
+        FileInputStream inputStream = null;
         try {
             inputStream = new FileInputStream(this.filePath);
         } catch (FileNotFoundException e) {
