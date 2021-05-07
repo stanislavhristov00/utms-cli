@@ -1,6 +1,8 @@
 D:\utms-cli\src\main\java\com\vmware\finaltask\cli\testresults\ExecutedCommand.java
 D:\utms-cli\src\main\java\com\vmware\finaltask\cli\testresults\ProjectResults.java
 D:\utms-cli\src\main\java\com\vmware\finaltask\cli\tests\Test.java
+D:\utms-cli\src\main\java\com\vmware\finaltask\cli\json\JsonParser.java
+D:\utms-cli\src\main\java\com\vmware\finaltask\cli\json\JsonError.java
 D:\utms-cli\src\main\java\com\vmware\finaltask\cli\validation\ParsedYamlValidation.java
 D:\utms-cli\src\main\java\com\vmware\finaltask\cli\ProjectCreatorService\ProjectService.java
 D:\utms-cli\src\main\java\com\vmware\finaltask\cli\testresults\TestResults.java
