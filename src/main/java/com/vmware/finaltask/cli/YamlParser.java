@@ -5,6 +5,7 @@ import org.yaml.snakeyaml.Yaml;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.io.InputStream;
 import java.util.Map;
 
@@ -24,7 +25,10 @@ public class YamlParser implements Parser {
         FileInputStream inputStream = null;
         try {
             inputStream = new FileInputStream(this.filePath);
+            System.getProperties().load(inputStream);
         } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
             e.printStackTrace();
         }
         return this.yaml.load(inputStream);
