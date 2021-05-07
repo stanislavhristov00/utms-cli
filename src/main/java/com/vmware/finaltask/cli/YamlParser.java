@@ -19,22 +19,8 @@ public class YamlParser implements Parser {
         this.filePath = filePath;
     }
     @Override
-    public LinkedHashMap<String, Object> parse(){
-       /* InputStream inputStream = this.getClass()
-                .getClassLoader()
-                .getResourceAsStream(this.filePath);*/
-        FileInputStream inputStream = null;
-        try {
-            inputStream = new FileInputStream(this.filePath);
-           // System.getProperties().load(inputStream);
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        System.out.println(inputStream.toString() + "hui");
-        Object x = this.yaml.load(inputStream);
-        System.out.println(x.toString() + "hui3");
-        return (LinkedHashMap<String, Object>) x;
+    public LinkedHashMap<String, Object> parse() throws FileNotFoundException{
+        FileInputStream inputStream = new FileInputStream(this.filePath);
+        return this.yaml.load(inputStream);
     }
 }

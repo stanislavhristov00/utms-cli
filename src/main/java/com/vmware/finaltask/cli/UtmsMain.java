@@ -13,6 +13,7 @@ import com.vmware.finaltask.cli.tests.Project;
 import com.vmware.finaltask.cli.validation.ParsedYamlValidation;
 import org.yaml.snakeyaml.error.YAMLException;
 
+import java.io.FileNotFoundException;
 import java.util.Map;
 
 public class UtmsMain {
@@ -24,7 +25,7 @@ public class UtmsMain {
                 .addObject(argf)
                 .build();
         flags.parse(args);
-        String filePath = "D:\\Games\\testing2.yaml";
+        String filePath = "testing.yaml";
         int runid = 1;
         if(argf.getConfig() != null){
             filePath = argf.getConfig();
@@ -32,7 +33,6 @@ public class UtmsMain {
         if(argf.getRunId() != null){
             runid = argf.getRunId();
         }
-            System.out.println(filePath);
             Parser yamlParser = new YamlParser(filePath);
             Map<String, Object> map = yamlParser.parse();
             if(ParsedYamlValidation.validate(map)){
@@ -43,11 +43,9 @@ public class UtmsMain {
                 System.out.println(JsonError.configFileNotValid());
             }
         }catch (IllegalArgumentException e){
-            System.out.println("File format for windows must be file:/(DISK):/(FOLDER)/...");
-        }catch (YAMLException yamlException){
-            yamlException.printStackTrace();
-            System.out.println(yamlException.getMessage());
-            //System.out.println(JsonError.configFileNotFound());
+            System.out.println("File format is wrong");
+        }catch (FileNotFoundException e){
+            System.out.println(JsonError.configFileNotFound());
         }catch (ParameterException parameterException){
             System.out.println(JsonError.runidIsNotValid());
         }
