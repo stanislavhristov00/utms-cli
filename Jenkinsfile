@@ -17,7 +17,9 @@ pipeline {
         }
 
         stage('Publish') {
-            archiveArtifacts 'target/utms-cli.jar'
+            steps{
+                archiveArtifacts 'target/utms-cli.jar'
+            }
         }
     }
 }
