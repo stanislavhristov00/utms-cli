@@ -24,7 +24,7 @@ public class UtmsMain {
                 .addObject(argf)
                 .build();
         flags.parse(args);
-        String filePath = "testing.yaml";
+        String filePath = "D:\\testing.yaml"; // TODO: ask for default value?
         int runid = 1;
         if(argf.getConfig() != null){
             filePath = argf.getConfig();
@@ -41,12 +41,12 @@ public class UtmsMain {
             }else{
                 System.out.println(JsonError.configFileNotValid());
             }
-        }catch (IllegalArgumentException e){
-            System.out.println("File format is wrong");
         }catch (FileNotFoundException e){
             System.out.println(JsonError.configFileNotFound());
         }catch (ParameterException parameterException){
             System.out.println(JsonError.runidIsNotValid());
+        }catch (ClassCastException e){
+            System.out.println("File format is wrong");
         }
     }
 } // TODO: maybe setup a default testing.yaml for config in Args

@@ -19,7 +19,7 @@ public class YamlParser implements Parser {
         this.filePath = filePath;
     }
     @Override
-    public LinkedHashMap<String, Object> parse() throws FileNotFoundException{
+    public LinkedHashMap<String, Object> parse() throws FileNotFoundException, ClassCastException{
         FileInputStream inputStream = new FileInputStream(this.filePath);
         return this.yaml.load(inputStream);
     }
