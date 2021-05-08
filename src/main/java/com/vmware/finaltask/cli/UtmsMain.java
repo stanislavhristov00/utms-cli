@@ -11,7 +11,6 @@ import com.vmware.finaltask.cli.json.JsonParser;
 import com.vmware.finaltask.cli.testresults.ProjectResults;
 import com.vmware.finaltask.cli.tests.Project;
 import com.vmware.finaltask.cli.validation.ParsedYamlValidation;
-import org.yaml.snakeyaml.error.YAMLException;
 
 import java.io.FileNotFoundException;
 import java.util.Map;

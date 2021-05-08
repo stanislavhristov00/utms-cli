@@ -26,7 +26,7 @@ public class CommandRunner {
         List<TestSuiteResults> tsRes = new ArrayList<>();
         for(TestSuite t : ts){
             TestSuiteResults tmp = executeTestSuite(t);
-            if(tmp.getStatus() == "failed"){
+            if(tmp.getStatus().equals("failed")){
                 status = false;
             }
             tsRes.add(tmp);
@@ -41,7 +41,7 @@ public class CommandRunner {
         List<TestResults> testResults = new ArrayList<>();
         for(Test test : tests) {
             TestResults tmp = executeTest(test);
-            if (tmp.getStatus() == "failed") {
+            if (tmp.getStatus().equals("failed")) {
                 status = false;
             }
             testResults.add(tmp);
@@ -65,7 +65,7 @@ public class CommandRunner {
             e.printStackTrace();
         }
 
-        return new TestResults(test.getName()); // TODO: THINK ABOUT ALTERNATIVES
+        return new TestResults(test.getName());
     }
 
     private static ExecutedCommand runCommand(String command) throws IOException {

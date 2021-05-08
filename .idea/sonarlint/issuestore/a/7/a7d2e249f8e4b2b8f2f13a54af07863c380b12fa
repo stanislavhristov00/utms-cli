@@ -1,26 +1,8 @@
 
-g
-java:S1128"ERemove this unused import 'com.vmware.finaltask.cli.tests.TestSuite'.(è½ß™ıÿÿÿÿ8¯¸‘·”/
 T
-java:S1135;"2Complete the task associated to this TODO comment.(˜ôÿÿÿÿÿ8÷—³”/
-O
-java:S1135<"2Complete the task associated to this TODO comment.(Íêïê8“»·”/
-M
-java:S1128"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ8¯¸‘·”/
-t
-java:S1128"RRemove this unused import 'com.vmware.finaltask.cli.testresults.TestSuiteResults'.(£ñš÷øÿÿÿÿ8¯¸‘·”/
-O
-java:S1135:"2Complete the task associated to this TODO comment.(„¾«˜8Í±®”/
-]
-java:S1128"@Remove this unused import 'com.vmware.finaltask.cli.tests.Test'.(Ç³×Â8¯¸‘·”/
-U	java:S106/"9Replace this use of System.out or System.err by a logger.(ü‰ìù8öë’·”/
-M
-java:S1128"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8¯¸‘·”/
-U	java:S1066"9Replace this use of System.out or System.err by a logger.(şç°×8°ë‘·”/
-o
-java:S1128"MRemove this unused import 'com.vmware.finaltask.cli.testresults.TestResults'.(ÜïúÕùÿÿÿÿ8éÖü¶”/
-Z	java:S1068"9Replace this use of System.out or System.err by a logger.(¬Şş•øÿÿÿÿ8°ë‘·”/
-U	java:S1061"9Replace this use of System.out or System.err by a logger.(ÛòÛê8°ë‘·”/
-Y
-java:S1128"7Remove this unused import 'org.json.simple.JSONObject'.(‚ƒç‘ÿÿÿÿÿ8ÄÏÒ¶”/
-U	java:S1064"9Replace this use of System.out or System.err by a logger.(Ç¯‚†8°ë‘·”/
+java:S11354"2Complete the task associated to this TODO comment.(˜ôÿÿÿÿÿ8÷—³”/
+U	java:S106*"9Replace this use of System.out or System.err by a logger.(ÛòÛê8ÂÌşÄ”/
+Z	java:S1061"9Replace this use of System.out or System.err by a logger.(¬Şş•øÿÿÿÿ8éÛÏ¾”/
+U	java:S106("9Replace this use of System.out or System.err by a logger.(ü‰ìù8ÂÌşÄ”/
+U	java:S106/"9Replace this use of System.out or System.err by a logger.(şç°×8¼Ã¸Æ”/
+Z	java:S106-"9Replace this use of System.out or System.err by a logger.(Ô‚şÍüÿÿÿÿ8¤Æ»Æ”/
