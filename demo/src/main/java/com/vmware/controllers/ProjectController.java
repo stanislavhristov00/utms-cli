@@ -1,8 +1,10 @@
 package com.vmware.controllers;
 
 import com.vmware.entities.Project;
-import com.vmware.repositories.ProjectRepository;
+import com.vmware.entities.TestRun;
+import com.vmware.entities.TestRunPK;
 import com.vmware.services.ProjectService;
+import com.vmware.services.TestRunService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -11,14 +13,21 @@ import java.util.List;
 @RequestMapping("/projects")
 public class ProjectController {
     private ProjectService projectService;
+    private TestRunService testRunService;
 
-    public ProjectController(ProjectService projectService){
+    public ProjectController(ProjectService projectService, TestRunService testRunService) {
         this.projectService = projectService;
+        this.testRunService = testRunService;
     }
 
     @GetMapping
     public List<Project> getAllProjects(){
         return this.projectService.getAllProjects();
+    }
+
+    @GetMapping("/{project_id}/runs")
+    public List<TestRunPK> getAllByProjectId(@PathVariable Long project_id){
+        return this.testRunService.findAllIdByProjectId(project_id);
     }
 
 }

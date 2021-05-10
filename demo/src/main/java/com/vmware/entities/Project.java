@@ -1,10 +1,13 @@
 package com.vmware.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 import java.util.Set;
 
 @Entity
 @Table(name = "project")
+//@JsonIgnoreProperties({"hibernateLazyInitializer", "handler", "testRuns"})
 public class Project {
     @Id
     @Column(name = "project_id")
@@ -16,6 +19,9 @@ public class Project {
     @OneToMany
     private Set<TestRun> testRuns;
 
+    public void addTestRun(TestRun testRun){
+        this.testRuns.add(testRun);
+    }
     public Project() {
     }
 
