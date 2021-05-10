@@ -2,6 +2,7 @@ package com.vmware.controllers;
 
 import com.vmware.entities.Project;
 import com.vmware.repositories.ProjectRepository;
+import com.vmware.services.ProjectService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -9,19 +10,15 @@ import java.util.List;
 @RestController
 @RequestMapping("/projects")
 public class ProjectController {
-    private ProjectRepository projectRepository;
+    private ProjectService projectService;
 
-    public ProjectController(ProjectRepository projectRepository){
-        this.projectRepository = projectRepository;
+    public ProjectController(ProjectService projectService){
+        this.projectService = projectService;
     }
 
     @GetMapping
     public List<Project> getAllProjects(){
-        return this.projectRepository.findAll();
+        return this.projectService.getAllProjects();
     }
 
-    @GetMapping("/{name}")
-    public Project findByName(@PathVariable String name){
-        return this.projectRepository.findByName(name);
-    }
 }
