@@ -18,6 +18,12 @@ public class TestCase {
     private TestCaseStatus status;
     @Column(name = "test_case_output")
     private String output;
+    @Column(name = "test_case_start_time")
+    private String startTime;
+    @Column(name = "test_case_end_time")
+    private String endTime;
+    @Column(name = "test_case_error_output")
+    private String error;
     @MapsId(value= "testSuiteId")
     @ManyToOne
     @JoinColumns({
