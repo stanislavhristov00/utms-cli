@@ -15,7 +15,7 @@ public class TestRunService {
         this.testRunRepository = testRunRepository;
     }
 
-    public List<TestRunPK> findAllIdByProjectId(Long id){
-        return this.testRunRepository.findIdByProjectId(id);
+    public List<Long> getIdByProjectId(Long id){
+        return this.testRunRepository.getIdByProjectId(id);
     }
 }

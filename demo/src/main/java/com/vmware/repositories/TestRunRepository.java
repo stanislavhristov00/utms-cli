@@ -8,5 +8,6 @@ import org.springframework.data.jpa.repository.Query;
 import java.util.List;
 
 public interface TestRunRepository extends JpaRepository<TestRun, TestRunPK> {
-    public List<TestRunPK> findIdByProjectId(Long id);
+    @Query(nativeQuery = true, value = "select test_run_id from test_run where project_id = ?1")
+    public List<Long> getIdByProjectId(Long id);
 }

@@ -16,7 +16,7 @@ public class TestRun {
     @OneToMany
     private Set<TestSuite> testSuites;
     @MapsId(value = "projectId")
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name = "project_id", referencedColumnName = "project_id")
     private Project project;
 

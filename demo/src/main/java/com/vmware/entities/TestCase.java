@@ -25,7 +25,7 @@ public class TestCase {
     @Column(name = "test_case_error_output")
     private String error;
     @MapsId(value= "testSuitePK") // used to be testSuiteId
-    @ManyToOne
+    @ManyToOne //maybe remove this one too
     @JoinColumns({
             @JoinColumn(name="test_suite_name", referencedColumnName = "test_suite_name"),
             @JoinColumn(name="project_id", referencedColumnName = "project_id")

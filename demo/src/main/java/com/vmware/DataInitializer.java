@@ -40,7 +40,7 @@ public class DataInitializer implements CommandLineRunner {
         this.testCaseRepository.save(test1);
         testSuite.addTestCase(test1);
         this.testSuiteRepository.save(testSuite);
-        TestRunPK testRunPK = new TestRunPK(project.getId(), 1L);
+        TestRunPK testRunPK = new TestRunPK(project.getId(), 100L);
         TestRun testRun = new TestRun(testRunPK, TestSuiteStatus.PASSED, new HashSet<>(), project);
         this.testRunRepository.save(testRun);
         testRun.addTestSuite(testSuite);
