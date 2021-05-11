@@ -1,16 +1,13 @@
 package com.vmware.models.baseModels.requestModels;
 
 import java.util.List;
-import java.util.Set;
 
 public class TestRunRequestModel {
-    //private Long runId;
     private ProjectRequestModel project;
     private String status;
     private List<TestSuiteRequestModel> suites;
 
-    public TestRunRequestModel(/*Long runId,*/ProjectRequestModel project, String status, List<TestSuiteRequestModel> suites) {
-        /*this.runId = runId;*/
+    public TestRunRequestModel(ProjectRequestModel project, String status, List<TestSuiteRequestModel> suites) {
         this.project = project;
         this.status = status;
         this.suites = suites;
@@ -19,13 +16,6 @@ public class TestRunRequestModel {
     public TestRunRequestModel() {
     }
 
-    /*public Long getRunId() {
-        return runId;
-    }
-
-    public void setRunId(Long runId) {
-        this.runId = runId;
-    }*/
 
     public ProjectRequestModel getProject() {
         return project;

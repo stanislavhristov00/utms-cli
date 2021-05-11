@@ -5,6 +5,7 @@ import com.vmware.entities.TestRun;
 import com.vmware.entities.TestRunPK;
 import com.vmware.enums.TestRunStatus;
 import com.vmware.models.baseModels.TestRunModel;
+import com.vmware.models.baseModels.requestModels.TestRunRequestModel;
 import com.vmware.repositories.ProjectRepository;
 import com.vmware.repositories.TestRunRepository;
 import org.springframework.stereotype.Component;
@@ -16,10 +17,14 @@ import java.util.List;
 public class TestRunService {
     private TestRunRepository testRunRepository;
     private ProjectRepository projectRepository;
+    private MappingService mappingService;
 
-    public TestRunService(TestRunRepository testRunRepository, ProjectRepository projectRepository){
+
+    public TestRunService(TestRunRepository testRunRepository, ProjectRepository projectRepository,
+                          MappingService mappingService){
         this.testRunRepository = testRunRepository;
         this.projectRepository = projectRepository;
+        this.mappingService = mappingService;
     }
 
 
@@ -44,5 +49,22 @@ public class TestRunService {
             return tr;
         }
         return null;
+    }
+
+    public void updateTestRun(TestRun testRun, TestRunRequestModel testRunRequestModel, Project project){
+        switch(testRunRequestModel.getStatus()){
+            case "passed":
+                testRun.setStatus(TestRunStatus.PASSED);
+                break;
+            case "failed":
+                testRun.setStatus(TestRunStatus.FAILED);
+                break;
+            case "skipped":
+                testRun.setStatus(TestRunStatus.SKIPPED);
+                break;
+        }
+        testRun.setTestSuites(this.mappingService.mapTestSuiteRequestModels(testRunRequestModel.getSuites(), project));
+        this.testRunRepository.save(testRun);
+        this.projectRepository.save(project);
     }
 }

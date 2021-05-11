@@ -1,8 +1,6 @@
 package com.vmware.models.baseModels.requestModels;
 
 import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Set;
 
 public class TestSuiteRequestModel {
     private String name;
@@ -10,6 +8,12 @@ public class TestSuiteRequestModel {
     private LinkedHashMap<String,TestCaseRequestModel> tests;
 
     public TestSuiteRequestModel() {
+    }
+
+    public TestSuiteRequestModel(String name, String status, LinkedHashMap<String, TestCaseRequestModel> tests) {
+        this.name = name;
+        this.status = status;
+        this.tests = tests;
     }
 
     public String getName() {

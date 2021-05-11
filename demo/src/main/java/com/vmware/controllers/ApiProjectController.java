@@ -27,7 +27,7 @@ public class ApiProjectController {
     }
 
     @PostMapping("/projects/{project_name}")
-    public Long addProject(@PathVariable String project_name, @RequestParam String description){
+    public Long addProject(@PathVariable String project_name, @RequestBody String description){
       return this.projectService.addProject(project_name, description);
     };
 
@@ -37,8 +37,10 @@ public class ApiProjectController {
     }
 
     @PostMapping("/projects/{project_id}/runs")
-    public Long addTestRun(@PathVariable Long project_id, @RequestBody TestRunRequestModel testRun){
+    public void addTestRun(@PathVariable Long project_id, @RequestBody TestRunRequestModel testRun){
         TestRun tr = this.testRunService.createTestRun(project_id);
-        return null;
+        if(tr != null){
+            this.testRunService.updateTestRun(tr, testRun, this.projectService.findById(project_id));
+        }
     }
 }
