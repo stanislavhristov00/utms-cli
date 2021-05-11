@@ -47,6 +47,24 @@ public class DataInitializer implements CommandLineRunner {
         this.testRunRepository.save(testRun);
         project.addTestRun(testRun);
         this.projectRepository.save(project);
+        TestSuitePK testSuitePK2 = new TestSuitePK("testSuite 2", project.getId());
+        TestSuite testSuite2 = new TestSuite(testSuitePK2, TestSuiteStatus.PASSED, new HashSet<>(), project);
+        TestCasePK testCasePK2 = new TestCasePK("test2", testSuitePK2);
+        TestCase test2 = new TestCase(testCasePK2, "Towa e test",
+                true, TestCaseStatus.PASSED,
+                "output", "startTime",
+                "endTime", "error", testSuite2);
+        this.testSuiteRepository.save(testSuite2);
+        this.testCaseRepository.save(test2);
+        testSuite2.addTestCase(test2);
+        this.testSuiteRepository.save(testSuite2);
+        TestRunPK testRunPK2 = new TestRunPK(project.getId(), 105L);
+        TestRun testRun2 = new TestRun(testRunPK2, TestSuiteStatus.PASSED, new HashSet<>(), project);
+        this.testRunRepository.save(testRun2);
+        testRun2.addTestSuite(testSuite2);
+        this.testRunRepository.save(testRun2);
+        project.addTestRun(testRun2);
+        this.projectRepository.save(project);
 
         /*Project project2 = new Project(3L, "proekt za missing id", "ne", null);
         this.projectRepository.saveAndFlush(project2);

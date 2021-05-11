@@ -10,4 +10,6 @@ import java.util.List;
 public interface TestRunRepository extends JpaRepository<TestRun, TestRunPK> {
     @Query(nativeQuery = true, value = "select test_run_id from test_run where project_id = ?1")
     public List<Long> getIdByProjectId(Long id);
+
+    public List<TestRun> findAllByProjectId(Long id);
 }
