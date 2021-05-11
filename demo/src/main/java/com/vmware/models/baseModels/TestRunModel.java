@@ -1,5 +1,6 @@
 package com.vmware.models.baseModels;
 
+import com.vmware.enums.TestRunStatus;
 import com.vmware.enums.TestSuiteStatus;
 
 import java.util.Set;
@@ -8,7 +9,7 @@ public class TestRunModel {
     private String status;
     private Set<TestSuiteModel> testSuites;
 
-    public TestRunModel(TestSuiteStatus status, Set<TestSuiteModel> testSuites) {
+    public TestRunModel(TestRunStatus status, Set<TestSuiteModel> testSuites) {
         switch (status){
             case PASSED:
                 this.status = "PASSED";
@@ -18,6 +19,9 @@ public class TestRunModel {
                 break;
             case SKIPPED:
                 this.status = "SKIPPED";
+                break;
+            case IN_PROGRESS:
+                this.status = "IN PROGRESS";
                 break;
         }
         this.testSuites = testSuites;

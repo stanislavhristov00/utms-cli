@@ -2,6 +2,7 @@ package com.vmware;
 
 import com.vmware.entities.*;
 import com.vmware.enums.TestCaseStatus;
+import com.vmware.enums.TestRunStatus;
 import com.vmware.enums.TestSuiteStatus;
 import com.vmware.repositories.ProjectRepository;
 import com.vmware.repositories.TestCaseRepository;
@@ -41,7 +42,7 @@ public class DataInitializer implements CommandLineRunner {
         testSuite.addTestCase(test1);
         this.testSuiteRepository.save(testSuite);
         TestRunPK testRunPK = new TestRunPK(project.getId(), 100L);
-        TestRun testRun = new TestRun(testRunPK, TestSuiteStatus.PASSED, new HashSet<>(), project);
+        TestRun testRun = new TestRun(testRunPK, TestRunStatus.PASSED, new HashSet<>(), project);
         this.testRunRepository.save(testRun);
         testRun.addTestSuite(testSuite);
         this.testRunRepository.save(testRun);
@@ -59,7 +60,7 @@ public class DataInitializer implements CommandLineRunner {
         testSuite2.addTestCase(test2);
         this.testSuiteRepository.save(testSuite2);
         TestRunPK testRunPK2 = new TestRunPK(project.getId(), 105L);
-        TestRun testRun2 = new TestRun(testRunPK2, TestSuiteStatus.PASSED, new HashSet<>(), project);
+        TestRun testRun2 = new TestRun(testRunPK2, TestRunStatus.PASSED, new HashSet<>(), project);
         this.testRunRepository.save(testRun2);
         testRun2.addTestSuite(testSuite2);
         this.testRunRepository.save(testRun2);

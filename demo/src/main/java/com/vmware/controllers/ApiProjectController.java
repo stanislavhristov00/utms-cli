@@ -3,6 +3,7 @@ package com.vmware.controllers;
 import com.vmware.entities.Project;
 import com.vmware.entities.TestRun;
 import com.vmware.models.baseModels.TestRunModel;
+import com.vmware.models.baseModels.requestModels.TestRunRequestModel;
 import com.vmware.services.ProjectService;
 import com.vmware.services.TestRunService;
 import org.springframework.web.bind.annotation.*;
@@ -35,8 +36,9 @@ public class ApiProjectController {
         return this.testRunService.findAllByProjectId(project_id);
     }
 
-    @PostMapping("projects/{project_id}/runs")
-    public void addTestRun(@PathVariable Long projectId, @RequestParam TestRun testRun){
-
+    @PostMapping("/projects/{project_id}/runs")
+    public Long addTestRun(@PathVariable Long project_id, @RequestBody TestRunRequestModel testRun){
+        TestRun tr = this.testRunService.createTestRun(project_id);
+        return null;
     }
 }

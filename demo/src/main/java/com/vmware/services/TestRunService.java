@@ -1,20 +1,25 @@
 package com.vmware.services;
 
+import com.vmware.entities.Project;
 import com.vmware.entities.TestRun;
 import com.vmware.entities.TestRunPK;
+import com.vmware.enums.TestRunStatus;
 import com.vmware.models.baseModels.TestRunModel;
+import com.vmware.repositories.ProjectRepository;
 import com.vmware.repositories.TestRunRepository;
 import org.springframework.stereotype.Component;
 
+import java.util.HashSet;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Component
 public class TestRunService {
     private TestRunRepository testRunRepository;
+    private ProjectRepository projectRepository;
 
-    public TestRunService(TestRunRepository testRunRepository){
+    public TestRunService(TestRunRepository testRunRepository, ProjectRepository projectRepository){
         this.testRunRepository = testRunRepository;
+        this.projectRepository = projectRepository;
     }
 
 
@@ -28,5 +33,16 @@ public class TestRunService {
         return new TestRunModel(tr.getStatus(), MappingService.mapTestSuiteModels(tr.getTestSuites()));
     }
 
-    //public void addTestRun()
+    public TestRun createTestRun(Long project_id){
+        Long testRunId = this.testRunRepository.findNextId(project_id);
+        Project project = this.projectRepository.findById(project_id).orElse(null);
+        if(project != null){
+            TestRun tr = new TestRun(new TestRunPK(project_id, testRunId), TestRunStatus.IN_PROGRESS, new HashSet<>(), project);
+            this.testRunRepository.save(tr);
+            project.addTestRun(tr);
+            this.projectRepository.save(project);
+            return tr;
+        }
+        return null;
+    }
 }

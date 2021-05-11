@@ -1,6 +1,7 @@
 package com.vmware.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.vmware.enums.TestRunStatus;
 import com.vmware.enums.TestSuiteStatus;
 
 import javax.persistence.*;
@@ -13,7 +14,7 @@ public class TestRun {
     @EmbeddedId
     private TestRunPK id;
     @Enumerated(value = EnumType.STRING)
-    private TestSuiteStatus status;
+    private TestRunStatus status;
     @OneToMany
     private Set<TestSuite> testSuites;
     @MapsId(value = "projectId")
@@ -27,7 +28,7 @@ public class TestRun {
     public TestRun() {
     }
 
-    public TestRun(TestRunPK id, TestSuiteStatus status, Set<TestSuite> testSuites, Project project) {
+    public TestRun(TestRunPK id, TestRunStatus status, Set<TestSuite> testSuites, Project project) {
         this.id = id;
         this.status = status;
         this.testSuites = testSuites;
@@ -42,11 +43,11 @@ public class TestRun {
         this.id = id;
     }
 
-    public TestSuiteStatus getStatus() {
+    public TestRunStatus getStatus() {
         return status;
     }
 
-    public void setStatus(TestSuiteStatus status) {
+    public void setStatus(TestRunStatus status) {
         this.status = status;
     }
 
