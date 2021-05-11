@@ -1,11 +1,13 @@
 package com.vmware.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.vmware.enums.TestCaseStatus;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name = "test_case")
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler", "testSuite"})
 public class TestCase {
     @EmbeddedId
     private TestCasePK id;

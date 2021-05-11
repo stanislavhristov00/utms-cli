@@ -1,17 +1,14 @@
-package com.vmware.models;
+package com.vmware.models.baseModels;
 
-import com.vmware.entities.TestSuite;
 import com.vmware.enums.TestSuiteStatus;
 
 import java.util.Set;
 
 public class TestRunModel {
-    private Long id;
     private String status;
     private Set<TestSuiteModel> testSuites;
 
-    public TestRunModel(Long id, TestSuiteStatus status, Set<TestSuiteModel> testSuites) {
-        this.id = id;
+    public TestRunModel(TestSuiteStatus status, Set<TestSuiteModel> testSuites) {
         switch (status){
             case PASSED:
                 this.status = "PASSED";
@@ -29,13 +26,6 @@ public class TestRunModel {
     public TestRunModel() {
     }
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public String getStatus() {
         return status;

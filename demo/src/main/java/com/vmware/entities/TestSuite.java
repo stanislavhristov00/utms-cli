@@ -8,6 +8,7 @@ import java.util.Set;
 @Entity
 @Table(name = "test_suite")
 //@JsonIgnoreProperties({"hibernateLazyInitializer", "handler", "testCases"})
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler", "project"})
 public class TestSuite {
     @EmbeddedId
     private TestSuitePK id;

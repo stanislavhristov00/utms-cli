@@ -1,19 +1,16 @@
-package com.vmware.models;
+package com.vmware.models.baseModels;
 
-import com.vmware.entities.TestCase;
-import com.vmware.enums.TestSuiteStatus;
+import com.vmware.enums.TestCaseStatus;
 
-import java.util.Set;
 
-public class TestSuiteModel {
+public class TestCaseModel {
     private String name;
     private String status;
-    private Set<TestCaseModel> testCases;
 
-    public TestSuiteModel() {
+    public TestCaseModel() {
     }
 
-    public TestSuiteModel(String name, TestSuiteStatus status, Set<TestCaseModel> testCases) {
+    public TestCaseModel(String name, TestCaseStatus status) {
         this.name = name;
         switch (status){
             case PASSED:
@@ -25,8 +22,10 @@ public class TestSuiteModel {
             case SKIPPED:
                 this.status = "SKIPPED";
                 break;
+            case STARTED:
+                this.status = "STARTED";
+                break;
         }
-        this.testCases = testCases;
     }
 
     public String getName() {
@@ -43,13 +42,5 @@ public class TestSuiteModel {
 
     public void setStatus(String status) {
         this.status = status;
-    }
-
-    public Set<TestCaseModel> getTestCases() {
-        return testCases;
-    }
-
-    public void setTestCases(Set<TestCaseModel> testCases) {
-        this.testCases = testCases;
     }
 }

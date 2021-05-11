@@ -2,8 +2,7 @@ package com.vmware.controllers;
 
 import com.vmware.entities.Project;
 import com.vmware.entities.TestRun;
-import com.vmware.entities.TestRunPK;
-import com.vmware.models.TestRunModel;
+import com.vmware.models.baseModels.TestRunModel;
 import com.vmware.services.ProjectService;
 import com.vmware.services.TestRunService;
 import org.springframework.web.bind.annotation.*;
@@ -26,9 +25,15 @@ public class ProjectController {
         return this.projectService.getAllProjects();
     }
 
+
     @GetMapping("/{project_id}/runs")
-    public List<TestRunModel> getAllByProjectId(@PathVariable Long project_id){
-        return this.testRunService.getIdByProjectId(project_id);
+    public List<TestRun> getAllByProjectId(@PathVariable Long project_id){
+       return this.testRunService.findAllByProjectId(project_id);
+    }
+
+    @GetMapping("/{project_id}/runs/{test_run_id}")
+    public TestRunModel getById(@PathVariable Long project_id, @PathVariable Long test_run_id){
+        return this.testRunService.findByProjectIdAndTestRunId(project_id, test_run_id);
     }
 
 }

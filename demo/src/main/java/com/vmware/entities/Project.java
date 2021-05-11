@@ -7,7 +7,7 @@ import java.util.Set;
 
 @Entity
 @Table(name = "project")
-//@JsonIgnoreProperties({"hibernateLazyInitializer", "handler", "testRuns"})
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler", "testRuns"})
 public class Project {
     @Id
     @Column(name = "project_id")
