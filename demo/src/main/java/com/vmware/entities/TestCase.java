@@ -30,7 +30,8 @@ public class TestCase {
     @ManyToOne //maybe remove this one too
     @JoinColumns({
             @JoinColumn(name="test_suite_name", referencedColumnName = "test_suite_name"),
-            @JoinColumn(name="project_id", referencedColumnName = "project_id")
+            @JoinColumn(name="project_id", referencedColumnName = "project_id"),
+            @JoinColumn(name="test_run_id", referencedColumnName = "test_run_id")
     })
     private TestSuite testSuite;
 

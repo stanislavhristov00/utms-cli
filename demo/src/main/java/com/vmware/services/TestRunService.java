@@ -63,7 +63,7 @@ public class TestRunService {
                 testRun.setStatus(TestRunStatus.SKIPPED);
                 break;
         }
-        testRun.setTestSuites(this.mappingService.mapTestSuiteRequestModels(testRunRequestModel.getSuites(), project));
+        testRun.setTestSuites(this.mappingService.mapTestSuiteRequestModels(testRunRequestModel.getSuites(),testRun));
         this.testRunRepository.save(testRun);
         this.projectRepository.save(project);
     }

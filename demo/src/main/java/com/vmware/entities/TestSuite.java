@@ -8,7 +8,7 @@ import java.util.Set;
 @Entity
 @Table(name = "test_suite")
 //@JsonIgnoreProperties({"hibernateLazyInitializer", "handler", "testCases"})
-@JsonIgnoreProperties({"hibernateLazyInitializer", "handler", "project"})
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler", "testRun"})
 public class TestSuite {
     @EmbeddedId
     private TestSuitePK id;
@@ -17,10 +17,13 @@ public class TestSuite {
     private TestSuiteStatus status;
     @OneToMany
     private Set<TestCase> testCases;
-    @MapsId(value="projectId")
-    @ManyToOne //maybe remove this one
-    @JoinColumn(name = "project_id", referencedColumnName = "project_id")
-    private Project project;
+    @MapsId(value="runId")
+    @ManyToOne
+    @JoinColumns({
+            @JoinColumn(name = "test_run_id", referencedColumnName = "test_run_id"),
+            @JoinColumn(name = "project_id", referencedColumnName = "project_id")
+    })
+    private TestRun testRun;
 
 
     public void addTestCase(TestCase testCase){
@@ -29,11 +32,19 @@ public class TestSuite {
     public TestSuite() {
     }
 
-    public TestSuite(TestSuitePK id, TestSuiteStatus status, Set<TestCase> testCases, Project project) {
+    public TestSuite(TestSuitePK id, TestSuiteStatus status, Set<TestCase> testCases, TestRun testRun) {
         this.id = id;
         this.status = status;
         this.testCases = testCases;
-        this.project = project;
+        this.testRun = testRun;
+    }
+
+    public TestRun getTestRun() {
+        return testRun;
+    }
+
+    public void setTestRun(TestRun testRun) {
+        this.testRun = testRun;
     }
 
     public TestSuitePK getId() {
@@ -60,11 +71,5 @@ public class TestSuite {
         this.testCases = testCases;
     }
 
-    public Project getProject() {
-        return project;
-    }
 
-    public void setProject(Project project) {
-        this.project = project;
-    }
 }

@@ -78,12 +78,12 @@ public class MappingService {
         return result;
     }
 
-    public Set<TestSuite> mapTestSuiteRequestModels(List<TestSuiteRequestModel> testSuites, Project project){
+    public Set<TestSuite> mapTestSuiteRequestModels(List<TestSuiteRequestModel> testSuites, TestRun testRun){
         Set<TestSuite> result = new HashSet<>();
         for(TestSuiteRequestModel t : testSuites){
             TestSuite tmp = new TestSuite();
-            tmp.setId(new TestSuitePK(t.getName(), project.getId()));
-            tmp.setProject(project);
+            tmp.setId(new TestSuitePK(t.getName(),
+                    new TestRunPK(testRun.getId().getProjectId(), testRun.getId().getTestRunId())));
             switch (t.getStatus()){
                 case "passed":
                     tmp.setStatus(TestSuiteStatus.PASSED);

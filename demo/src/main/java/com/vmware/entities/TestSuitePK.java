@@ -8,15 +8,24 @@ import java.io.Serializable;
 public class TestSuitePK implements Serializable {
     @Column(name = "test_suite_name")
     private String name;
-    @Column(name = "project_id")
-    private Long projectId;
+    @Column(name = "test_run_id")
+    private TestRunPK testRunPK;
 
     public TestSuitePK() {
     }
 
-    public TestSuitePK(String name, Long projectId) {
+
+    public TestSuitePK(String name, TestRunPK testRunPK) {
         this.name = name;
-        this.projectId = projectId;
+        this.testRunPK = testRunPK;
+    }
+
+    public TestRunPK getTestRunPK() {
+        return testRunPK;
+    }
+
+    public void setTestRunPK(TestRunPK testRunPK) {
+        this.testRunPK = testRunPK;
     }
 
     public String getName() {
@@ -27,11 +36,4 @@ public class TestSuitePK implements Serializable {
         this.name = name;
     }
 
-    public Long getProjectId() {
-        return projectId;
-    }
-
-    public void setProjectId(Long projectId) {
-        this.projectId = projectId;
-    }
 }
