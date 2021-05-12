@@ -59,7 +59,7 @@ public class UtmsMain {
                     .build();
             flags.parse(args);
             if (argf.isDebug()) {
-                String filePath = "D:\\testing.yaml"; 
+                String filePath = "D:\\testing.yaml";
                 if (argf.getConfig() != null) {
                     filePath = argf.getConfig();
                 }

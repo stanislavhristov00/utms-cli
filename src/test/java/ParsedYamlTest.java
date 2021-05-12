@@ -1,3 +1,4 @@
+/*
 import com.vmware.finaltask.cli.YamlParser;
 import com.vmware.finaltask.cli.validation.ParsedYamlValidation;
 import org.junit.Assert;
@@ -33,3 +34,4 @@ public class ParsedYamlTest {
         Assert.assertFalse(ParsedYamlValidation.validate(null));
     }
 }
+*/
