@@ -2,13 +2,13 @@ package com.vmware.controllers;
 
 import com.vmware.entities.Project;
 import com.vmware.entities.TestRun;
-import com.vmware.models.baseModels.TestRunModel;
 import com.vmware.models.baseModels.requestModels.TestRunRequestModel;
 import com.vmware.services.ProjectService;
 import com.vmware.services.TestRunService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/api")
@@ -26,9 +26,9 @@ public class ApiProjectController {
         return this.projectService.findByName(project_name);
     }
 
-    @PostMapping("/projects/{project_name}")
-    public Long addProject(@PathVariable String project_name, @RequestBody String description){
-      return this.projectService.addProject(project_name, description);
+    @PostMapping("/projects")
+    public Long addProject(@RequestBody Map<String, Object> map){
+      return this.projectService.addProject((String)map.get("name"), (String)map.get("description"));
     };
 
     @GetMapping("/projects/{project_id}/runs")

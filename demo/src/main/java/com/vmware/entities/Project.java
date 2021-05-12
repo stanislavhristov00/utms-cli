@@ -10,6 +10,7 @@ import java.util.Set;
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler", "testRuns"})
 public class Project {
     @Id
+    @GeneratedValue
     @Column(name = "project_id")
     private Long id;
     @Column(name = "project_name", unique = true)
@@ -25,8 +26,8 @@ public class Project {
     public Project() {
     }
 
-    public Project(Long id, String name, String description, Set<TestRun> testRuns) {
-        this.id = id;
+    public Project(/*Long id,*/ String name, String description, Set<TestRun> testRuns) {
+        //this.id = id;
         this.name = name;
         this.description = description;
         this.testRuns = testRuns;

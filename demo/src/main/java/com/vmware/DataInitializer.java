@@ -28,9 +28,10 @@ public class DataInitializer implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        Project project = new Project(1L, "proektche", "testowo proektche", new HashSet<>());
-        this.projectRepository.save(project);
-        TestSuitePK testSuitePK = new TestSuitePK("testSuite", project.getId());
+      /*  Project project = new Project( "proektche", "testowo proektche", new HashSet<>());
+        this.projectRepository.save(project);*/
+
+        /*TestSuitePK testSuitePK = new TestSuitePK("testSuite", project.getId());
         TestSuite testSuite = new TestSuite(testSuitePK, TestSuiteStatus.PASSED, new HashSet<>(), project);
         TestCasePK testCasePK = new TestCasePK("test1", testSuitePK);
         TestCase test1 = new TestCase(testCasePK, "Towa e test",
@@ -65,7 +66,7 @@ public class DataInitializer implements CommandLineRunner {
         testRun2.addTestSuite(testSuite2);
         this.testRunRepository.save(testRun2);
         project.addTestRun(testRun2);
-        this.projectRepository.save(project);
+        this.projectRepository.save(project);*/
 
         /*Project project2 = new Project(3L, "proekt za missing id", "ne", null);
         this.projectRepository.saveAndFlush(project2);

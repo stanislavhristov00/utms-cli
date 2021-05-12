@@ -28,10 +28,10 @@ public class ProjectService {
     public Long addProject(String name, String description){
         Project pr = this.projectRepository.findByName(name);
         if(pr == null){
-            Long id = this.projectRepository.getNextId();
-            pr = new Project(id, name, description, new HashSet<>()); // TODO: make it a treeset and write a comparator
+            //Long id = this.projectRepository.getNextId();
+            pr = new Project(name, description, new HashSet<>()); // TODO: make it a treeset and write a comparator
             this.projectRepository.save(pr);
-            return id;
+            return pr.getId();
         }else{
             if(pr.getDescription().equals(description)){
             return pr.getId();

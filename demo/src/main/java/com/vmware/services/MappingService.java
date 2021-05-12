@@ -7,10 +7,8 @@ import com.vmware.models.baseModels.TestCaseModel;
 import com.vmware.models.baseModels.TestSuiteModel;
 import com.vmware.models.baseModels.requestModels.TestCaseRequestModel;
 import com.vmware.models.baseModels.requestModels.TestSuiteRequestModel;
-import com.vmware.repositories.ProjectRepository;
 import com.vmware.repositories.TestCaseRepository;
 import com.vmware.repositories.TestSuiteRepository;
-import org.aspectj.weaver.ast.Test;
 import org.springframework.stereotype.Component;
 
 import java.util.HashSet;

@@ -12,6 +12,6 @@ public interface ProjectRepository extends JpaRepository<Project, Long> {
     @Query(value = "select p from Project p where p.id = ?1")
     Project getById(Long id);
 
-    @Query(nativeQuery = true, value = "select l.project_id + 1 from project as l left outer join project as r on l.project_id + 1 = r.project_id where r.project_id is null limit 1")
-    public Long getNextId();
+    /*@Query(nativeQuery = true, value = "select l.project_id + 1 from project as l left outer join project as r on l.project_id + 1 = r.project_id where r.project_id is null limit 1")
+    public Long getNextId();*/
 }
