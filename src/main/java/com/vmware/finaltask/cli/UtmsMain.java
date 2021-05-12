@@ -29,19 +29,15 @@ import java.util.Map;
 public class UtmsMain {
 
     public static HttpRequest makeProjectPOSTRequest(String name, String description, String address){
-        StringBuilder nameEscaped = new StringBuilder();
-        for(int i=0; i<name.length(); i++){
-            if(name.charAt(i) != ' '){
-                nameEscaped.append(name.charAt(i));
-            }else{
-                nameEscaped.append("%20");
-            }
-        }
-        String requestURI = address + "/projects/" + nameEscaped.toString();
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("name", name);
+        jsonObject.put("description", description);
+        String requestURI = address + "/projects";
 
         return HttpRequest.newBuilder()
                 .uri(URI.create(requestURI))
-                .POST(HttpRequest.BodyPublishers.ofString(description))
+                .header("Content-type", "application/json")
+                .POST(HttpRequest.BodyPublishers.ofString(jsonObject.toJSONString()))
                 .build();
 
     }
@@ -63,7 +59,7 @@ public class UtmsMain {
                     .build();
             flags.parse(args);
             if (argf.isDebug()) {
-                String filePath = "D:\\testing.yaml"; // TODO: ask for default value?
+                String filePath = "D:\\testing.yaml"; 
                 if (argf.getConfig() != null) {
                     filePath = argf.getConfig();
                 }

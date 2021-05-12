@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="3" failures="0" name="ParsedYamlTest" time="0.085" errors="0" skipped="0">
+<testsuite tests="3" failures="0" name="ParsedYamlTest" time="0.082" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="java.vm.version" value="11.0.10+9-LTS"/>
@@ -68,7 +68,7 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="ParsedYamlTest" name="testWithInvalidYaml" time="0.083"/>
+  <testcase classname="ParsedYamlTest" name="testWithInvalidYaml" time="0.079"/>
   <testcase classname="ParsedYamlTest" name="testWithNull" time="0"/>
-  <testcase classname="ParsedYamlTest" name="testWithValidYaml" time="0.002"/>
+  <testcase classname="ParsedYamlTest" name="testWithValidYaml" time="0.003"/>
 </testsuite>
