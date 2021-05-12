@@ -17,9 +17,29 @@ public class JsonError {
         return error;
     }
 
-    public static JSONObject runidIsNotValid(){
+    public static JSONObject serverAddressNotProvided(){
         JSONObject error = new JSONObject();
-        error.put("error", "Run Id is not valid.");
+        error.put("error", "Server address not specified.");
         return error;
     }
+
+    public static JSONObject projectAlreadyExists(){
+        JSONObject error = new JSONObject();
+        error.put("error", "Project with this name already exists");
+        return error;
+    }
+
+    public static JSONObject urlProblem(){
+        JSONObject error = new JSONObject();
+        error.put("error", "Something wrong with the address");
+        return error;
+    }
+
+    public static JSONObject fileFormatProblem(){
+        JSONObject error = new JSONObject();
+        error.put("error", "Config file format should be .yaml or .yml");
+        return error;
+    }
+
+
 }

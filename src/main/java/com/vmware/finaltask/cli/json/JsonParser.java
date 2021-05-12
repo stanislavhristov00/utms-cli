@@ -18,7 +18,6 @@ public class JsonParser {
         projectInside.put("name", projectResults.getName());
         projectInside.put("description", projectResults.getDescription());
 
-        project.put("runId", projectResults.getRunId());
         project.put("project", projectInside);
         project.put("status", projectResults.getStatus());
         project.put("suites", parseSuites(projectResults.getSuites()));

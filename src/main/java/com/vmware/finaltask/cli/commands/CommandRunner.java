@@ -20,7 +20,7 @@ public class CommandRunner {
 
     private CommandRunner(){}
 
-    public static ProjectResults executeProject(Project project, int runId){
+    public static ProjectResults executeProject(Project project){
         boolean status = true;
         List<TestSuite> ts = project.getSuites();
         List<TestSuiteResults> tsRes = new ArrayList<>();
@@ -32,7 +32,7 @@ public class CommandRunner {
             tsRes.add(tmp);
         }
         String finalStatus = (status == true)? "passed" : "failed";
-        return new ProjectResults(runId,project.getName(),project.getDescription(),finalStatus, tsRes);
+        return new ProjectResults(project.getName(),project.getDescription(),finalStatus, tsRes);
     }
 
     public static TestSuiteResults executeTestSuite(TestSuite suite){

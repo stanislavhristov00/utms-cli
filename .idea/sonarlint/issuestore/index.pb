@@ -35,3 +35,7 @@ k
 ;src/main/java/com/vmware/finaltask/cli/json/JsonParser.java,4\7\47826c381764cb3a83a38476fdd899e996782764
 j
 :src/main/java/com/vmware/finaltask/cli/json/JsonError.java,f\c\fc961f8d8d150877d0f8d3155371c745a08d948a
+Q
+!src/test/java/YamlParserTest.java,f\0\f0e79882595516d8a9253b3b8704f0ef7f03d56f
+Q
+!src/test/java/ParsedYamlTest.java,3\6\36519f30af5ffc7e91f758214ee770856039010d
