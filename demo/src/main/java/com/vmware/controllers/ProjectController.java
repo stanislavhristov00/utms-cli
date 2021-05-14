@@ -26,6 +26,11 @@ public class ProjectController {
         return this.projectService.getAllProjects();
     }
 
+    @GetMapping("/{project_id}")
+    public Project getByID(@PathVariable Long project_id){
+        return this.projectService.findById(project_id);
+    }
+
 
     @GetMapping("/{project_id}/runs")
     public List<TestRun> getAllByProjectId(@PathVariable Long project_id){
