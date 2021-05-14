@@ -30,7 +30,8 @@ public class MappingService {
     public static Set<TestCaseModel> mapTestCaseModels(Set<TestCase> testCases) {
         Set<TestCaseModel> result = new HashSet<>();
         for (TestCase t : testCases) {
-            TestCaseModel temp = new TestCaseModel(t.getId().getName(), t.getStatus());
+            TestCaseModel temp = new TestCaseModel(t.getId().getName(), t.getStatus(),
+                    t.getOutput(), t.getError(), t.getStartTime(), t.getEndTime());
             result.add(temp);
         }
         return result;
