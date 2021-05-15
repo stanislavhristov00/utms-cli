@@ -31,7 +31,7 @@ public class MappingService {
         Set<TestCaseModel> result = new HashSet<>();
         for (TestCase t : testCases) {
             TestCaseModel temp = new TestCaseModel(t.getId().getName(), t.getStatus(),
-                    t.getOutput(), t.getError(), t.getStartTime(), t.getEndTime());
+                    t.getOutput(), t.getError(), t.getStartDate(), t.getEndDate());
             result.add(temp);
         }
         return result;
@@ -69,8 +69,8 @@ public class MappingService {
                     break;
             }
             tmp.setOutput(testCaseRequestModel.getOutput());
-            tmp.setStartTime(testCaseRequestModel.getStartDate());
-            tmp.setEndTime(testCaseRequestModel.getEndDate());
+            tmp.setStartDate(testCaseRequestModel.getStartDate());
+            tmp.setEndDate(testCaseRequestModel.getEndDate());
             tmp.setError(testCaseRequestModel.getError());
             tmp.setTestSuite(testSuite);
             result.add(tmp);

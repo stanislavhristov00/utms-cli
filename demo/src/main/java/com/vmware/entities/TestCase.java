@@ -21,9 +21,9 @@ public class TestCase {
     @Column(name = "test_case_output")
     private String output;
     @Column(name = "test_case_start_time")
-    private String startTime;
+    private String startDate;
     @Column(name = "test_case_end_time")
-    private String endTime;
+    private String endDate;
     @Column(name = "test_case_error_output")
     private String error;
     @MapsId(value= "testSuitePK") // used to be testSuiteId
@@ -44,8 +44,8 @@ public class TestCase {
         this.enabled = enabled;
         this.status = status;
         this.output = output;
-        this.startTime = startTime;
-        this.endTime = endTime;
+        this.startDate = startTime;
+        this.endDate = endTime;
         this.error = error;
         this.testSuite = testSuite;
     }
@@ -93,20 +93,20 @@ public class TestCase {
         this.output = output;
     }
 
-    public String getStartTime() {
-        return startTime;
+    public String getStartDate() {
+        return startDate;
     }
 
-    public void setStartTime(String startTime) {
-        this.startTime = startTime;
+    public void setStartDate(String startDate) {
+        this.startDate = startDate;
     }
 
-    public String getEndTime() {
-        return endTime;
+    public String getEndDate() {
+        return endDate;
     }
 
-    public void setEndTime(String endTime) {
-        this.endTime = endTime;
+    public void setEndDate(String endDate) {
+        this.endDate = endDate;
     }
 
     public String getError() {
