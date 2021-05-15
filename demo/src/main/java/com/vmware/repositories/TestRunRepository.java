@@ -18,6 +18,6 @@ public interface TestRunRepository extends JpaRepository<TestRun, TestRunPK> {
     @Query(value = "select t from TestRun t where t.id = ?1")
     public TestRun findByPK(TestRunPK testRunPK);
 
-    @Query(nativeQuery = true, value = "select * from test_run where project_id = ?1 order by test_run_id desc")
+    @Query(nativeQuery = true, value = "select * from test_run where project_id = ?1 order by test_run_id desc limit 5")
     public List<TestRun> findAllByProjectId(Long id);
 }
