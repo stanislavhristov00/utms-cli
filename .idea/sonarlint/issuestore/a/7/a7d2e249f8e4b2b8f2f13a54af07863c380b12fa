@@ -1,12 +1,31 @@
 
-O
-java:S1135"2Complete the task associated to this TODO comment.(âñ÷”8ÜëĞî”/
-U	java:S106*"9Replace this use of System.out or System.err by a logger.(ÛòÛê8ÂÌşÄ”/
-Z	java:S1061"9Replace this use of System.out or System.err by a logger.(Ô‚şÍüÿÿÿÿ8ç£üî”/
-U	java:S106-"9Replace this use of System.out or System.err by a logger.(şç°×8¼Ã¸Æ”/
-Z	java:S106/"9Replace this use of System.out or System.err by a logger.(¬Şş•øÿÿÿÿ8éÛÏ¾”/
-U	java:S106("9Replace this use of System.out or System.err by a logger.(ü‰ìù8ÂÌşÄ”/
+r	java:S117-"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ààÈ³úÿÿÿÿ8¨™Ô–/
+U	java:S106o"9Replace this use of System.out or System.err by a logger.(Úğ³8©ıÇ–/
+K
+java:S1128")Remove this unused import 'java.net.URL'.(ñìÁ„üÿÿÿÿ8Ì‹²€–/
+c
+java:S1075>"ARefactor your code to get this URI from a customizable parameter.(À¶ñÜúÿÿÿÿ8èÂ¾€–/
+o
+java:S37766"RRefactor this method to reduce its Cognitive Complexity from 20 to the 15 allowed.(Çµí‘8Ù‹÷€–/
+U	java:S106G"9Replace this use of System.out or System.err by a logger.(ü‰ìù8èÂ¾€–/
+U	java:S106\"9Replace this use of System.out or System.err by a logger.(Õ“ÑÖ8ƒÅÄ–/
+U	java:S106d"9Replace this use of System.out or System.err by a logger.(ÛòÛê8ÎáĞ€–/
 T
-java:S11354"2Complete the task associated to this TODO comment.(˜ôÿÿÿÿÿ8÷—³”/
-^
-java:S1075"ARefactor your code to get this URI from a customizable parameter.(âñ÷”8±õ¤î”/
+java:S1481`"2Remove this unused "httpResponse1" local variable.(à°¶ÿÿÿÿÿ8•‚ó–/
+T
+java:S1128"7Remove this unused import 'java.net.HttpURLConnection'.(¬¬˜­8Ì‹²€–/
+c
+java:S1854`"ARemove this useless assignment to local variable "httpResponse1".(à°¶ÿÿÿÿÿ8•‚ó–/
+m	java:S117Z"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ø·¿´8Ûıù€–/
+Q
+java:S1128"/Remove this unused import 'java.time.Duration'.(ëá¯‰üÿÿÿÿ8Æ½î€–/
+c
+java:S1075O"ARefactor your code to get this URI from a customizable parameter.(À¶ñÜúÿÿÿÿ8êßÈ€–/
+Z	java:S106k"9Replace this use of System.out or System.err by a logger.(Í’Âàùÿÿÿÿ8ÎáĞ€–/
+U	java:S106I"9Replace this use of System.out or System.err by a logger.(ÛòÛê8èÂ¾€–/
+c
+java:S2142n"FEither re-interrupt this method or rethrow the "InterruptedException".(ò¶È8Ìì÷€–/
+U	java:S106i"9Replace this use of System.out or System.err by a logger.(şç°×8ÎáĞ€–/
+Z	java:S106m"9Replace this use of System.out or System.err by a logger.(ˆçªªÿÿÿÿÿ8ÎáĞ€–/
+P
+java:S1128".Remove this unused import 'java.util.HashMap'.(™˜”€ùÿÿÿÿ8âÑæ‚–/
