@@ -1,10 +1,5 @@
 package com.vmware.finaltask.cli.validation;
 
-//TODO: EACH TEST MUST HAVE A COMMAND AND ENABLED PROPERTY. THEY MUST BE NOT NULL.
-//DESCRIPTION IS NOT NECESSARY
-
-import com.vmware.finaltask.cli.tests.Test;
-
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
