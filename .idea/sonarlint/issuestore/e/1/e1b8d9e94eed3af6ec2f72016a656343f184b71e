@@ -1,0 +1,7 @@
+
+k	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(á¥õƒúÿÿÿÿ
+f	java:S117$"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ò“Åô
+k	java:S117)"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ûê’Þûÿÿÿÿ
+k	java:S117)"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ûê’Þûÿÿÿÿ
+‚
+java:S1845)"gRename method "getById" to prevent any misunderstanding/clash with method "getByID" defined on line 30.(Ûê’Þûÿÿÿÿ
